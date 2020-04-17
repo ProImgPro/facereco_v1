@@ -1,16 +1,26 @@
-import argparse
-import numpy
 import cv2
 import os
 import face_recognition
 import pickle
 import pymongo
-from flask import jsonify, request
+from flask import jsonify, request, Flask
 from datetime import datetime
 from flask_restful import Resource
-from marshmallow import fields
-from utils import parse_req
-from bson import ObjectId
+from flask_jwt_extended import JWTManager
+from flask_restful import Api
+
+
+app = Flask(__name__)
+app.config['PROPAGATE_EXCEPTIONS'] = True
+# app.config["MONGO_URI"] = "mongodb://bootai:1234567aA%40@27.72.147.222:27017/erp?authSource=admin"
+app.config["MONGO_URI"] = 'mongodb://localhost:27017/'
+app.config['JSONIFY_PRETTYPRINT_REGULAR'] = False
+
+jwt = JWTManager(app)
+
+app.secret_key = 'Yep'
+
+api = Api(app)
 
 myclient = pymongo.MongoClient('mongodb://localhost:27017/')
 mytable = myclient['test2m']
@@ -19,7 +29,8 @@ mycol4 = mytable['registry']
 
 
 class Registry(Resource):
-
+    known_face_encodings = []
+    known_face_names = []
     file_pickle_known_face_names = "known_face_names"
     file_pickle_known_face_encodings = "known_face_encodings"
 
@@ -59,16 +70,16 @@ class Registry(Resource):
 
     @classmethod
     def get(cls):
-        param = request.args.get('name', None)
-        find_name = mycol2.find_one({'name': param}, {'_id': 0, 'name':1})
-        if find_name is None:
-            return jsonify("No data!")
+        # param = request.args.get('name', None)
+        # find_name = mycol2.find_one({'name': param}, {'_id': 0, 'name':1})
+        # if find_name is None:
+        #     return jsonify("No data!")
+        #
+        # name = str(find_name['name'])
 
-        name = str(find_name['name'])
-        # name = "Ngo Xuan Manh" # sửa tên rùi lấy mẫu
-        # name = args.name
         path = "data/"
-        dirName = path + str(name)
+        name = "OOO"
+        dirName = path + name
 
         try:
             os.mkdir(dirName)
@@ -95,11 +106,9 @@ class Registry(Resource):
             cv2.imshow("Video", img)
             if cv2.waitKey(2) == ord('q'):
                 break
+
         cam.release()
         cv2.destroyAllWindows()
-
-        known_face_encodings = []
-        known_face_names = []
 
         while True:
             try:
@@ -122,13 +131,14 @@ class Registry(Resource):
         Nam = now.strftime("%y")
         current_time = now.strftime("%H:%M:%S")
         ThoiGian = Ngay+Thang+Nam+current_time
+
         for img in img_arr:
             cv2.imwrite(dirName + "/" + ThoiGian + str(frame_name) + ".jpg", img)
             frame_name = frame_name + 1
 
             img_encoding = face_recognition.face_encodings(img)[0]
-            known_face_encodings.append(img_encoding)
-            known_face_names.append(name)
+            cls.known_face_encodings.append(img_encoding)
+            cls.known_face_names.append(name)
 
         f_pickle_known_face_names = open(cls.file_pickle_known_face_names, 'wb')
         pickle.dump(known_face_names, f_pickle_known_face_names)
@@ -139,3 +149,11 @@ class Registry(Resource):
         f_pickle_known_face_encodings.close()
 
         return jsonify("Create Successfully !")
+
+
+api.add_resource(Registry, '/res')
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=2345, debug=True)
+
+

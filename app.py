@@ -66,4 +66,4 @@ api.add_resource(ListStudent, '/liststudent')
 api.add_resource(TimeAppear, '/timeappear')
 
 if __name__ == '__main__':
-    app.run(host = '0.0.0.0', port=23487, debug=True)
+    app.run(host='0.0.0.0', port=23487, debug=True)

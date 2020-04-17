@@ -9,7 +9,6 @@ from datetime import datetime
 from flask_restful import Resource
 
 
-# myclient = pymongo.MongoClient("mongodb://bootai:1234567aA%40@27.72.147.222:27017/erp?authSource=admin")
 myclient = pymongo.MongoClient('mongodb://localhost:27017/')
 mytable = myclient['test2m']
 mycol3 = mytable['known_face_name']
