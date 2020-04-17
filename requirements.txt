@@ -200,7 +200,6 @@ QtPy==1.9.0
 raven==6.9.0
 redis==2.10.6
 regex==2018.1.10
-requests==2.21.0
 rope==0.14.0
 ruamel-yaml==0.15.46
 s3transfer==0.3.3
