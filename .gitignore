@@ -10,4 +10,4 @@ wheels/
 eggs/
 .eggs/
 develop-eggs/
-. xlwings/
+.xlwings/
