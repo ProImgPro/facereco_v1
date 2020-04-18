@@ -6,7 +6,6 @@ build/
 lib/
 lib64/
 pygame/
-wheels/
 eggs/
 .eggs/
 develop-eggs/
