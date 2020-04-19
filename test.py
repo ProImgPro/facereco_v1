@@ -71,7 +71,7 @@ while True:
         img_arr.append(img)
 
     cv2.imshow("Video", img)
-    if cv2.waitKey(2) == ord('q'):
+    if cv2.waitKey(2) == ord('q'):ata
         break
 cam.release()
 cv2.destroyAllWindows()
