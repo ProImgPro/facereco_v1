@@ -82,7 +82,7 @@ class Recognition(Resource):
                 break
             except:
                 print("chưa có file thông số, bắt đầu tạo")
-                Create_File_ThongSo()
+                cls.Create_File_ThongSo()
 
         return (known_face_names, known_face_encodings)
 
