@@ -1,1 +1,1 @@
-web: gunicorn facereco_v1.wsgi
+web: gunicorn facereco_v1:app
