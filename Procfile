@@ -1,1 +1,1 @@
-web: gunicorn /Users/mf840/PycharmProjects/facereco_v1.wsgi
+web: gunicorn facereco_v1.wsgi
