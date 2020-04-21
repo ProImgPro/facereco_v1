@@ -1,2 +1,2 @@
 DEBUG = True
-ALLOWED_HOSTS = ['smartcamhaui.herokuapp.com']
+ALLOWED_HOSTS = ['smartcamhauik11.herokuapp.com']
