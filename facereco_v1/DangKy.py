@@ -10,7 +10,7 @@ file_pickle_known_face_names = "known_face_names"
 file_pickle_known_face_encodings = "known_face_encodings"
 
 def Create_File_ThongSo():
-    path = "data/"
+    path = "../data/"
     ThongTin = list(os.walk(path))
 
     # tạo mảng dữ liệu
@@ -50,7 +50,7 @@ def Create_File_ThongSo():
 
 #name = "Ngo Xuan Manh" # sửa tên rùi lấy mẫu
 name = "Manh"
-path = "data/"
+path = "../data/"
 dirName = path + name
 
 try:

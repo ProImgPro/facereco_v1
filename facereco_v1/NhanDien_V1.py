@@ -20,7 +20,7 @@ class Recognition(Resource):
 
     @classmethod
     def Create_File_ThongSo(cls):
-        path = "data/"
+        path = "../data/"
         ThongTin = list(os.walk(path))
 
         # tạo mảng dữ liệu

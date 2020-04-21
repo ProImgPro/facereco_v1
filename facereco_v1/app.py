@@ -2,12 +2,12 @@ from flask import Flask
 from flask_jwt_extended import JWTManager
 from flask_restful import Api
 import pymongo
-from auth import UserRegister, Login, Logout
-from Infor_User import Infor, ChangeAvatar, ListStudent
+from facereco_v1.auth import UserRegister, Login, Logout
+from facereco_v1.Infor_User import Infor, ChangeAvatar, ListStudent
 from flask_mail import Mail
 from flask_restful import Resource
-from DangKy_V1 import Registry
-from NhanDien_V1 import Recognition, TimeAppear
+from facereco_v1.DangKy_V1 import Registry
+from facereco_v1.NhanDien_V1 import Recognition, TimeAppear
 
 app = Flask(__name__)
 app.config['PROPAGATE_EXCEPTIONS'] = True

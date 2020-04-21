@@ -36,7 +36,7 @@ class Registry(Resource):
 
     @classmethod
     def Create_File_ThongSo(cls):
-        path = "data/"
+        path = "../data/"
         ThongTin = list(os.walk(path))
 
         # tạo mảng dữ liệu
@@ -77,7 +77,7 @@ class Registry(Resource):
         #
         # name = str(find_name['name'])
 
-        path = "data/"
+        path = "../data/"
         name = "OOO"
         dirName = path + name
 
