@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="39d04792-3418-44f3-8e5e-e0834741b80a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/facereco_v1/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -491,7 +489,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587479801472</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="first">
+      <created>1587480461161</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1587480461161</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -515,10 +520,10 @@
       <screen x="0" y="23" width="1280" height="720" />
     </state>
     <state x="388" y="246" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.23.1280.720@0.23.1280.720" timestamp="1586251427448" />
-    <state x="149" y="23" width="733" height="720" key="CommitChangelistDialog2" timestamp="1587480460984">
+    <state x="149" y="23" width="733" height="720" key="CommitChangelistDialog2" timestamp="1587481321153">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="149" y="23" width="733" height="720" key="CommitChangelistDialog2/0.0.1280.800@0.0.1280.800" timestamp="1587480460984" />
+    <state x="149" y="23" width="733" height="720" key="CommitChangelistDialog2/0.0.1280.800@0.0.1280.800" timestamp="1587481321153" />
     <state x="149" y="23" key="CommitChangelistDialog2/0.23.1280.713@0.23.1280.713" timestamp="1587372543204" />
     <state x="149" y="23" key="CommitChangelistDialog2/0.23.1280.720@0.23.1280.720" timestamp="1587317952077" />
     <state x="449" y="302" key="Github.CreateGistDialog" timestamp="1587375489760">
@@ -579,10 +584,10 @@
     </state>
     <state x="149" y="23" key="SettingsEditor/0.0.1280.800@0.0.1280.800" timestamp="1587146741985" />
     <state x="149" y="23" width="982" height="720" key="SettingsEditor/0.23.1280.720@0.23.1280.720" timestamp="1587318118458" />
-    <state x="240" y="111" key="Vcs.Push.Dialog.v2" timestamp="1587480464261">
+    <state x="240" y="111" key="Vcs.Push.Dialog.v2" timestamp="1587481412133">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="240" y="111" key="Vcs.Push.Dialog.v2/0.0.1280.800@0.0.1280.800" timestamp="1587480464261" />
+    <state x="240" y="111" key="Vcs.Push.Dialog.v2/0.0.1280.800@0.0.1280.800" timestamp="1587481412133" />
     <state x="240" y="122" key="Vcs.Push.Dialog.v2/0.23.1280.713@0.23.1280.713" timestamp="1587371282187" />
     <state x="240" y="123" key="Vcs.Push.Dialog.v2/0.23.1280.720@0.23.1280.720" timestamp="1587318029484" />
     <state x="319" y="213" key="com.intellij.ide.util.TipDialog" timestamp="1587460262767">
