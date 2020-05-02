@@ -6,7 +6,7 @@ from bson import ObjectId
 from werkzeug.security import safe_str_cmp
 import pymongo
 from flask_jwt_extended import (create_access_token, create_refresh_token,
-                                get_raw_jwt, jwt_required, get_jti)
+                                get_raw_jwt)
 from datetime import timedelta
 from utils import check_email
 
@@ -75,7 +75,7 @@ class Login(Resource):
         user = mycol.find_one({'username': username})
 
         if not safe_str_cmp(user['password'], password):
-            return jsonify("Your password is wrong !")
+            return jsonify("Your password is wrong!")
 
         access_token = create_access_token(identity=str(user['_id']), expires_delta=ACCESS_EXPIRES)
         fresh_token = create_refresh_token(identity=str(user['_id']), expires_delta=FRESH_EXPIRES)
@@ -107,7 +107,4 @@ class Logout(Resource):
         """
         access_token = get_raw_jwt()
         mycol1.remove({"access_token": access_token})
-        return jsonify("Logout Successfully !")
-
-
-
+        return jsonify("Logout Successfully!")

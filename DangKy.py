@@ -9,8 +9,9 @@ from datetime import datetime
 file_pickle_known_face_names = "known_face_names"
 file_pickle_known_face_encodings = "known_face_encodings"
 
+
 def Create_File_ThongSo():
-    path = "../data/"
+    path = "data/"
     ThongTin = list(os.walk(path))
 
     # tạo mảng dữ liệu
@@ -41,7 +42,6 @@ def Create_File_ThongSo():
     f_pickle_known_face_encodings.close()
 
 
-
     print("tạo file thông số hoàn tất")
 
 # parser = argparse.ArgumentParser()
@@ -50,7 +50,7 @@ def Create_File_ThongSo():
 
 #name = "Ngo Xuan Manh" # sửa tên rùi lấy mẫu
 name = "Manh"
-path = "../data/"
+path = "data/"
 dirName = path + name
 
 try:
@@ -82,7 +82,6 @@ cam.release()
 cv2.destroyAllWindows()
 
 
-
 known_face_encodings = []
 known_face_names = []
 
@@ -97,7 +96,6 @@ while True:
         known_face_encodings = pickle.load(f_pickle_known_face_encodings)
         f_pickle_known_face_encodings.close()
 
-
         break
     except:
         print("chưa có file thông số, bắt đầu tạo")
@@ -110,6 +108,7 @@ Thang = now.strftime("%m")
 Nam = now.strftime("%y")
 current_time = now.strftime("%H:%M:%S")
 ThoiGian = Ngay+Thang+Nam+current_time
+
 for img in img_arr:
     cv2.imwrite(dirName + "/" + ThoiGian + str(frame_name) + ".jpg", img)
     frame_name = frame_name + 1

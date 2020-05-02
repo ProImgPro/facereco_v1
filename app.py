@@ -2,12 +2,12 @@ from flask import Flask
 from flask_jwt_extended import JWTManager
 from flask_restful import Api
 import pymongo
-from facereco_v1.auth import UserRegister, Login, Logout
-from facereco_v1.Infor_User import Infor, ChangeAvatar, ListStudent
+from auth import UserRegister, Login, Logout
+from Infor_User import Infor, ChangeAvatar, ListStudent
 from flask_mail import Mail
 from flask_restful import Resource
-from facereco_v1.DangKy_V1 import Registry
-from facereco_v1.NhanDien_V1 import Recognition, TimeAppear
+from DangKy_V1 import Registry, TimeAppear
+from NhanDien_V1 import Recognition
 
 app = Flask(__name__)
 app.config['PROPAGATE_EXCEPTIONS'] = True
@@ -19,8 +19,8 @@ app.config.update(
     MAIL_SERVER='smtp.gmail.com',
     MAIL_PORT=465,
     MAIL_USE_SSL=True,
-    MAIL_USERNAME='manh.ngoxuan198@gmail.com',
-    MAIL_PASSWORD='manhkorea1234'
+    MAIL_USERNAME='phaigiaunhuchungno1998@gmail.com',
+    MAIL_PASSWORD='manhkorea12'
 )
 
 mail = Mail(app)
@@ -47,11 +47,12 @@ class SendMail(Resource):
         if find_name == find_name1:
             msg = mail.send_message(
                 'Roll Call Successfully !',
-                sender='phaigiaunhuchungno198@gmail.com',
+                sender='phaigiaunhuchungno1998@gmail.com',
                 recipients=[find_email['email']],
+                # recipients=['phaigiaunhuchungno1998@gmail.com'],
                 body="Congratulations you've succeeded!"
             )
-        return 'Mail sent'
+        print(find_email['email'])
 
 
 api.add_resource(UserRegister, '/logup')
@@ -65,5 +66,6 @@ api.add_resource(Recognition, '/recognition')
 api.add_resource(ListStudent, '/liststudent')
 api.add_resource(TimeAppear, '/timeappear')
 
+
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=23487, debug=True)
+    app.run(host='127.0.0.1', port=23487, debug=True)

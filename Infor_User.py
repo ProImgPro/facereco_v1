@@ -12,7 +12,7 @@ import pymongo
 from flask import Flask
 from flask_mail import Mail
 
-app = Flask(__name__)
+app = Flask(_name_)
 
 mail = Mail(app)
 
@@ -90,7 +90,6 @@ class Infor(Resource):
         except Exception:
             return jsonify("An error occurred when inserting data")
 
-    @jwt_required
     def put(self):
         """
         :variable: name, age, course, name_class
@@ -174,7 +173,6 @@ class Infor(Resource):
         find_data = list(mycol2.find({}, {'_id': 0}).skip(skips).limit(int(page_size)))
         return jsonify(find_data)
 
-    @jwt_required
     def delete(self):
         """
         :param: _id
@@ -205,7 +203,6 @@ class Infor(Resource):
 
 class ChangeAvatar(Resource):
 
-    @jwt_required
     def put(self):
         person_id = request.args.get('_id', None)
         query = {
@@ -227,7 +224,6 @@ class ChangeAvatar(Resource):
             profile_img = request.files['image']
         except Exception:
             return jsonify("An error occurred when requesting files !")
-
 
         filename = profile_img.filename
         filename = find_person['name'] + filename
@@ -268,8 +264,3 @@ class ListStudent(Resource):
             results.append(student)
 
         return jsonify(results)
-
-
-
-
-
