@@ -68,5 +68,5 @@ SQLAlchemy==1.2.12
 timestring==1.6.4
 webargs==1.8.1
 webdriver-manager==2.3.0
-Werkzeug==0.12.2
+Werkzeug==0.15.5
 
